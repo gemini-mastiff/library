@@ -26,7 +26,46 @@
 </div>
 
 <dialog open>
-    <h3>Hello</h3>
+    <form action="">
+        <button class="close-button"></button>
+        <div class="form-row">
+            <label for="title">Title</label>
+            <input  id="title"
+                    name="title"
+                    type="text">
+        </div>
+        <div class="form-row">
+            <label for="author">Author</label>
+            <input  id="author"
+                    name="author"
+                    type="text">
+        </div>
+        <div class="form-row">
+            <label for="pages">Page Count</label>
+            <input  id="pages"
+                    name="pages"
+                    type="tel">
+        </div>
+        <fieldset>
+            <legend>Have you read the book?</legend>
+            <input  id="read-1"
+            name="read"
+            value="read"
+            type="radio">
+            <label for="read-1">Read</label>
+            <input  id="read-2"
+            name="read"
+            value="reading"
+            type="radio">
+            <label for="read-2">Reading</label>
+            <input  id="read-3"
+            name="read"
+            value="unread"
+            type="radio">
+            <label for="read-3">Unread</label>
+        </fieldset>
+        <button>Save</button>
+    </form>
 </dialog>
     
 </body>
