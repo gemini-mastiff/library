@@ -1,4 +1,6 @@
 const table = document.querySelector("tbody");
+let allRows;
+
 const dialog = document.querySelector("dialog");
 const form = document.querySelector("form");
 const titleInput = document.querySelector("#title");
@@ -10,6 +12,10 @@ const saveBtn = document.querySelector("#saveBtn");
 const myLibrary = [];
 
 function updateTable(){
+    allRows = document.querySelectorAll("tr");
+    allRows.forEach((row) => {
+        row.remove();
+    });
     for (book of myLibrary){
         const row = document.createElement("tr");
         for (property in book){
