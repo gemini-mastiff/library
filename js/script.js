@@ -6,9 +6,15 @@ function updateTable(){
     for (book of myLibrary){
         const row = document.createElement("tr");
         for (property in book){
-            const info = document.createElement("td");
-            info.textContent = book[property];
-            row.appendChild(info);
+            if (property === "title"){
+                const header = document.createElement("th");
+                header.textContent = book[property];
+                row.appendChild(header)
+            } else {
+                const info = document.createElement("td");
+                info.textContent = book[property];
+                row.appendChild(info);
+            }
         }
         table.appendChild(row);
     }
