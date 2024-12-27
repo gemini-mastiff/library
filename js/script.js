@@ -6,7 +6,7 @@ const form = document.querySelector("form");
 const titleInput = document.querySelector("#title");
 const authorInput = document.querySelector("#author");
 const pagesInput = document.querySelector("#pages");
-const readInput = document.querySelector("fieldset");
+const readInput = document.querySelector("select");
 const saveBtn = document.querySelector("#saveBtn");
 
 const myLibrary = [];
@@ -58,7 +58,7 @@ saveBtn.addEventListener("click", (event) => {
     dialog.close()
 });
 
-addBookToLibrary("Meditations", "Marcus Aurelius", 304, false);
-addBookToLibrary("Psycho-Cybernetics", "Dr Maxwell Maltz", 282, true);
-addBookToLibrary("The Princess Bride", "William Goldman", 512, true);
+addBookToLibrary("Meditations", "Marcus Aurelius", 304, "unread");
+addBookToLibrary("Psycho-Cybernetics", "Dr Maxwell Maltz", 282, "reading");
+addBookToLibrary("The Princess Bride", "William Goldman", 512, "finished");
 updateTable()
