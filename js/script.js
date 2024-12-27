@@ -9,8 +9,9 @@ function updateTable(){
             if (property === "title"){
                 const header = document.createElement("th");
                 header.textContent = book[property];
+                header.setAttribute("scope", "row")
                 row.appendChild(header)
-            } else {
+            } else { 
                 const info = document.createElement("td");
                 info.textContent = book[property];
                 row.appendChild(info);
