@@ -22,3 +22,10 @@ time, mark, audio, video {
 body{
     height: 100vh;
 }
+
+.wrapper{
+    width: 80%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+}
