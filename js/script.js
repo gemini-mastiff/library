@@ -46,17 +46,13 @@ function addBookToLibrary(title, author, pages, read) {
     myLibrary.push(newBook);
 };
 
-function clearDialog() {
-    form.reset();
-};
-
 saveBtn.addEventListener("click", (event) => {
     event.preventDefault();
     title = titleInput.value;
     author = authorInput.value;
     pages = pagesInput.value;
     read = readInput.value;
-    clearDialog();
+    form.reset();
     addBookToLibrary(title, author, pages, read);
     updateTable();
     dialog.close()
