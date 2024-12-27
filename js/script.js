@@ -29,3 +29,4 @@ function addBookToLibrary(title, author, pages, read) {
 addBookToLibrary("Meditations", "Marcus Aurelius", 304, false);
 addBookToLibrary("Psycho-Cybernetics", "Dr Maxwell Maltz", 282, true);
 addBookToLibrary("The Princess Bride", "William Goldman", 512, true);
+updateTable()
