@@ -1,5 +1,6 @@
 const table = document.querySelector("tbody");
 const dialog = document.querySelector("dialog");
+const form = document.querySelector("form");
 const titleInput = document.querySelector("#title");
 const authorInput = document.querySelector("#author");
 const pagesInput = document.querySelector("#pages");
@@ -36,28 +37,26 @@ function Book(title, author, pages, read){
 
 function addBookToLibrary(title, author, pages, read) {
     let newBook = new Book(title, author, pages, read);
-    myLibrary.push(newBook)
-}
+    myLibrary.push(newBook);
+};
+
+function clearDialog() {
+    form.reset();
+};
+
+saveBtn.addEventListener("click", (event) => {
+    event.preventDefault();
+    title = titleInput.value;
+    author = authorInput.value;
+    pages = pagesInput.value;
+    read = readInput.value;
+    clearDialog();
+    addBookToLibrary(title, author, pages, read);
+    updateTable();
+    dialog.close()
+});
 
 addBookToLibrary("Meditations", "Marcus Aurelius", 304, false);
 addBookToLibrary("Psycho-Cybernetics", "Dr Maxwell Maltz", 282, true);
 addBookToLibrary("The Princess Bride", "William Goldman", 512, true);
 updateTable()
-
-//function clearDIalog(){
-//  titleInput.reset();
-//  authorInput.reset();
-//  pagesInput.reset();
-//  readInput.reset();
-//};
-
-//saveBtn.addEventListener("click", (event) => {
-//  event.preventDefault();
-//  title = titleInput.value;
-//  author = authorInput.value;
-//  pages = pagesInput.value;
-//  read = readInput.value;
-//  clearDialog();
-//  addBookToLibrary(title, author, pages, read);
-//  dialog.close()
-//});
