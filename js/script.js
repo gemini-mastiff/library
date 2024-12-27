@@ -1,4 +1,18 @@
+const table = document.querySelector("table");
+
 const myLibrary = [];
+
+function updateTable(){
+    for (book of myLibrary){
+        const row = document.createElement("tr");
+        for (property in book){
+            const info = document.createElement("td");
+            info.textContent = book[property];
+            row.appendChild(info);
+        }
+        table.appendChild(row);
+    }
+   }
 
 function Book(title, author, pages, read){
     this.title = title;
