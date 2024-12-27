@@ -13,7 +13,7 @@ menu, nav, output, ruby, section, summary,
 time, mark, audio, video {
 	margin: 0;
 	padding: 0;
-	border: 1px solid red;
+	/* border: 1px solid red; */
 	font-size: 100%;
 	font: inherit;
 	vertical-align: baseline;
@@ -32,4 +32,12 @@ body{
 
 h1{
     text-align: center;
+}
+
+table{
+    border-collapse: collapse;
+}
+
+th, td{
+    border: 1px solid black;
 }
