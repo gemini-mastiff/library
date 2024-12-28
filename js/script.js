@@ -55,9 +55,9 @@ saveBtn.addEventListener("click", (event) => {
     author = authorInput.value;
     pages = pagesInput.value;
     read = readInput.value;
-    form.reset();
     addBookToLibrary(title, author, pages, read);
     updateTable();
+    form.reset();
     dialog.close()
 });
 
