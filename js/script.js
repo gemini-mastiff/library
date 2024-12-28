@@ -1,6 +1,7 @@
 const table = document.querySelector("tbody");
 let allRows;
 
+const newBtn = document.querySelector("#showDialog");
 const dialog = document.querySelector("dialog");
 const form = document.querySelector("form");
 const titleInput = document.querySelector("#title");
