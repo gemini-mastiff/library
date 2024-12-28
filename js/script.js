@@ -15,12 +15,7 @@ const saveBtn = document.querySelector("#saveBtn");
 
 const myLibrary = [];
 
-function updateTable(){
-    // Clears the existing table to avoid repeating when updateTable() is called
-    allRows = document.querySelectorAll(".row");
-    allRows.forEach((row) => {
-        row.remove();
-    });
+function generateTable() {
     for (book of myLibrary){
         const index = myLibrary.indexOf(book);
         const row = document.createElement("tr");
@@ -56,15 +51,27 @@ function updateTable(){
         row.appendChild(delCell);
         table.appendChild(row);
     };
+};
+
+function updateTable(){
+    // Clears the existing table to avoid repeating when updateTable() is called
+    allRows = document.querySelectorAll(".row");
+    allRows.forEach((row) => {
+        row.remove();
+    });
+    generateTable()
+
+    // When the table updates, allReadBoxes & allDelBtns must be updated with it
     allReadBoxes = document.querySelectorAll(".readBox");
+    allDelBtns = document.querySelectorAll(".delBtn");
+
     allReadBoxes.forEach((readBox) => {
         let book = myLibrary[readBox.dataset.index]
         readBox.addEventListener("change", () => {
             book.read = readBox.checked ? true : false; 
         });
     });
-    // When the table updates, allDelBtns must be updated with it
-    allDelBtns = document.querySelectorAll(".delBtn");
+
     allDelBtns.forEach((delBtn) => {
         delBtn.addEventListener("click", () => {
             myLibrary.splice(delBtn.dataset.index, 1);
