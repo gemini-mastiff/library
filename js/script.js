@@ -37,7 +37,7 @@ function updateTable(){
                     const readBox = document.createElement("input");
                     readBox.setAttribute("type", "checkbox");
                     readBox.classList.add("readBox");
-                    readBox.setAttribute("data-index", index)
+                    readBox.setAttribute("data-index", index);
                     if (book.read === true) {
                         readBox.setAttribute("checked", true);
                     }
@@ -57,7 +57,18 @@ function updateTable(){
         table.appendChild(row);
     };
     allReadBoxes = document.querySelectorAll(".readBox");
-    
+    allReadBoxes.forEach((readBox) => {
+        let index = readBox.dataset.index;
+        let book = myLibrary[index]
+        readBox.addEventListener("click", () => {
+            if (readBox.checked) {
+                book.read = true
+            } else {
+                book.read = false
+            }
+            console.log(`${book.title} : ${book.read}`)
+        });
+    });
     // When the table updates, allDelBtns must be updated with it
     allDelBtns = document.querySelectorAll(".delBtn");
     allDelBtns.forEach((delBtn) => {
