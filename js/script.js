@@ -9,7 +9,7 @@ const form = document.querySelector("form");
 const titleInput = document.querySelector("#title");
 const authorInput = document.querySelector("#author");
 const pagesInput = document.querySelector("#pages");
-const readInput = document.querySelector("select");
+const readInput = document.querySelector("#read");
 const saveBtn = document.querySelector("#saveBtn");
 
 const myLibrary = [];
@@ -30,6 +30,9 @@ function updateTable(){
                 header.textContent = book[property];
                 header.setAttribute("scope", "row")
                 row.appendChild(header)
+            // } else if (property === "reading") {
+            //     const info = document.createElementNS("td");
+            //     info.textContent = book[property];
             } else { 
                 const info = document.createElement("td");
                 info.textContent = book[property];
@@ -43,6 +46,7 @@ function updateTable(){
         row.appendChild(delCell);
         table.appendChild(row);
     };
+    // When the table updates, allDelBtns must be updated with it
     allDelBtns = document.querySelectorAll("[data-index]");
     allDelBtns.forEach((delBtn) => {
         delBtn.addEventListener("click", () => {
@@ -52,11 +56,6 @@ function updateTable(){
         });
     }); 
 };
-
-addBookToLibrary("Meditations", "Marcus Aurelius", 304, "unread");
-addBookToLibrary("Psycho-Cybernetics", "Dr Maxwell Maltz", 282, "reading");
-addBookToLibrary("The Princess Bride", "William Goldman", 512, "finished");
-updateTable()
 
 function Book(title, author, pages, read){
     this.title = title;
@@ -69,6 +68,11 @@ function addBookToLibrary(title, author, pages, read) {
     let newBook = new Book(title, author, pages, read);
     myLibrary.push(newBook);
 };
+
+addBookToLibrary("Meditations", "Marcus Aurelius", 304, "unread");
+addBookToLibrary("Psycho-Cybernetics", "Dr Maxwell Maltz", 282, "finished");
+addBookToLibrary("The Princess Bride", "William Goldman", 512, "finished");
+updateTable()
 
 newBtn.addEventListener("click", () => {
     dialog.show();
