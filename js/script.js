@@ -88,7 +88,11 @@ saveBtn.addEventListener("click", (event) => {
     title = titleInput.value;
     author = authorInput.value;
     pages = pagesInput.value;
-    read = readInput.value;
+    if (readInput.checked) {
+        read = true;
+    } else {
+        read = false;
+    }
     addBookToLibrary(title, author, pages, read);
     updateTable();
     form.reset();
