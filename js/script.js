@@ -34,6 +34,10 @@ function updateTable(){
                 row.appendChild(info);
             }
         }
+        const delCell = document.createElement("td");
+        const del = document.createElement("button");
+        delCell.appendChild(del);
+        row.appendChild(delCell);
         table.appendChild(row);
     }
    }
@@ -75,3 +79,4 @@ addBookToLibrary("Meditations", "Marcus Aurelius", 304, "unread");
 addBookToLibrary("Psycho-Cybernetics", "Dr Maxwell Maltz", 282, "reading");
 addBookToLibrary("The Princess Bride", "William Goldman", 512, "finished");
 updateTable()
+
