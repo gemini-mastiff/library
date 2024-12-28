@@ -1,5 +1,6 @@
 const table = document.querySelector("tbody");
 let allRows;
+let allDelBtns;
 
 const newBtn = document.querySelector("#showDialog");
 const closeBtn = document.querySelector("#closeBtn");
@@ -42,6 +43,14 @@ function updateTable(){
         row.appendChild(delCell);
         table.appendChild(row);
     };
+    allDelBtns = document.querySelectorAll("[data-index]");
+    allDelBtns.forEach((delBtn) => {
+        delBtn.addEventListener("click", () => {
+            console.log(delBtn.dataset.index)
+            myLibrary.splice(delBtn.dataset.index, 1);
+            updateTable();
+        });
+    }); 
 };
 
 addBookToLibrary("Meditations", "Marcus Aurelius", 304, "unread");
@@ -60,15 +69,6 @@ function addBookToLibrary(title, author, pages, read) {
     let newBook = new Book(title, author, pages, read);
     myLibrary.push(newBook);
 };
-
-const allDelBtns = document.querySelectorAll("[data-index]")
-allDelBtns.forEach((delBtn) => {
-    delBtn.addEventListener("click", () => {
-        console.log(delBtn.dataset.index)
-        myLibrary.splice(delBtn.dataset.index, 1);
-        updateTable();
-    });
-});
 
 newBtn.addEventListener("click", () => {
     dialog.show();
