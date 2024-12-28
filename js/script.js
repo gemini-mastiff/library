@@ -30,12 +30,15 @@ function updateTable(){
                 header.textContent = book[property];
                 header.setAttribute("scope", "row")
                 row.appendChild(header)
-            // } else if (property === "reading") {
-            //     const info = document.createElementNS("td");
-            //     info.textContent = book[property];
             } else { 
                 const info = document.createElement("td");
-                info.textContent = book[property];
+                if (property === "read") {
+                    const readBox = document.createElement("input");
+                    readBox.setAttribute("type", "checkbox");
+                    info.appendChild(readBox);
+                } else {
+                    info.textContent = book[property];
+                }
                 row.appendChild(info);
             }
         }
