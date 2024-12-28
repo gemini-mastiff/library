@@ -23,18 +23,21 @@ function updateTable(){
     for (book of myLibrary){
         const index = myLibrary.indexOf(book);
         const row = document.createElement("tr");
-        row.classList.add("row")
+        row.classList.add("row");
         for (property in book){
             if (property === "title"){
                 const header = document.createElement("th");
                 header.textContent = book[property];
-                header.setAttribute("scope", "row")
-                row.appendChild(header)
+                header.setAttribute("scope", "row");
+                row.appendChild(header);
             } else { 
                 const info = document.createElement("td");
                 if (property === "read") {
                     const readBox = document.createElement("input");
                     readBox.setAttribute("type", "checkbox");
+                    if (book.read === true) {
+                        readBox.setAttribute("checked", true);
+                    }
                     info.appendChild(readBox);
                 } else {
                     info.textContent = book[property];
@@ -53,7 +56,6 @@ function updateTable(){
     allDelBtns = document.querySelectorAll("[data-index]");
     allDelBtns.forEach((delBtn) => {
         delBtn.addEventListener("click", () => {
-            console.log(delBtn.dataset.index)
             myLibrary.splice(delBtn.dataset.index, 1);
             updateTable();
         });
@@ -75,7 +77,7 @@ function addBookToLibrary(title, author, pages, read) {
 addBookToLibrary("Meditations", "Marcus Aurelius", 304, false);
 addBookToLibrary("Psycho-Cybernetics", "Dr Maxwell Maltz", 282, true);
 addBookToLibrary("The Princess Bride", "William Goldman", 512, true);
-updateTable()
+updateTable();
 
 newBtn.addEventListener("click", () => {
     dialog.show();
@@ -95,6 +97,6 @@ saveBtn.addEventListener("click", (event) => {
     addBookToLibrary(title, author, pages, read);
     updateTable();
     form.reset();
-    dialog.close()
+    dialog.close();
 });
 
