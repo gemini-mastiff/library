@@ -1,6 +1,7 @@
 const table = document.querySelector("tbody");
 let allRows;
 let allDelBtns;
+let allReadBoxes;
 
 const newBtn = document.querySelector("#showDialog");
 const closeBtn = document.querySelector("#closeBtn");
@@ -55,8 +56,10 @@ function updateTable(){
         row.appendChild(delCell);
         table.appendChild(row);
     };
+    allReadBoxes = document.querySelectorAll(".readBox");
+    
     // When the table updates, allDelBtns must be updated with it
-    allDelBtns = document.querySelectorAll("delBtn");
+    allDelBtns = document.querySelectorAll(".delBtn");
     allDelBtns.forEach((delBtn) => {
         delBtn.addEventListener("click", () => {
             myLibrary.splice(delBtn.dataset.index, 1);
