@@ -35,6 +35,7 @@ function updateTable(){
                 if (property === "read") {
                     const readBox = document.createElement("input");
                     readBox.setAttribute("type", "checkbox");
+                    readBox.classList.add("readBox");
                     if (book.read === true) {
                         readBox.setAttribute("checked", true);
                     }
