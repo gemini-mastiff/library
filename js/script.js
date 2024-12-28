@@ -49,6 +49,10 @@ function addBookToLibrary(title, author, pages, read) {
     myLibrary.push(newBook);
 };
 
+newBtn.addEventListener("click", () => {
+    dialog.show();
+});
+
 saveBtn.addEventListener("click", (event) => {
     event.preventDefault();
     title = titleInput.value;
