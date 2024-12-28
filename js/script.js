@@ -23,7 +23,6 @@ function updateTable(){
         const index = myLibrary.indexOf(book);
         const row = document.createElement("tr");
         row.classList.add("row")
-        row.setAttribute("data-index", index);
         for (property in book){
             if (property === "title"){
                 const header = document.createElement("th");
@@ -38,6 +37,7 @@ function updateTable(){
         }
         const delCell = document.createElement("td");
         const delBtn = document.createElement("button");
+        delBtn.setAttribute("data-index", index);
         delCell.appendChild(delBtn);
         row.appendChild(delCell);
         table.appendChild(row);
