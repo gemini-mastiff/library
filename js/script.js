@@ -69,9 +69,9 @@ function addBookToLibrary(title, author, pages, read) {
     myLibrary.push(newBook);
 };
 
-addBookToLibrary("Meditations", "Marcus Aurelius", 304, "unread");
-addBookToLibrary("Psycho-Cybernetics", "Dr Maxwell Maltz", 282, "finished");
-addBookToLibrary("The Princess Bride", "William Goldman", 512, "finished");
+addBookToLibrary("Meditations", "Marcus Aurelius", 304, false);
+addBookToLibrary("Psycho-Cybernetics", "Dr Maxwell Maltz", 282, true);
+addBookToLibrary("The Princess Bride", "William Goldman", 512, true);
 updateTable()
 
 newBtn.addEventListener("click", () => {
@@ -88,11 +88,7 @@ saveBtn.addEventListener("click", (event) => {
     title = titleInput.value;
     author = authorInput.value;
     pages = pagesInput.value;
-    if (readInput.checked) {
-        read = true;
-    } else {
-        read = false;
-    }
+    read = readInput.checked ? true : false;
     addBookToLibrary(title, author, pages, read);
     updateTable();
     form.reset();
