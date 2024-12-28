@@ -49,13 +49,14 @@ function updateTable(){
         }
         const delCell = document.createElement("td");
         const delBtn = document.createElement("button");
+        delBtn.classList.add("delBtn")
         delBtn.setAttribute("data-index", index);
         delCell.appendChild(delBtn);
         row.appendChild(delCell);
         table.appendChild(row);
     };
     // When the table updates, allDelBtns must be updated with it
-    allDelBtns = document.querySelectorAll("[data-index]");
+    allDelBtns = document.querySelectorAll("delBtn");
     allDelBtns.forEach((delBtn) => {
         delBtn.addEventListener("click", () => {
             myLibrary.splice(delBtn.dataset.index, 1);
