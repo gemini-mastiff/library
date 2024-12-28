@@ -12,12 +12,14 @@ const saveBtn = document.querySelector("#saveBtn");
 const myLibrary = [];
 
 function updateTable(){
-    allRows = document.querySelectorAll("tr");
+    // Clears the existing table to avoid repeating when updateTable() is called
+    allRows = document.querySelectorAll(".row");
     allRows.forEach((row) => {
         row.remove();
     });
     for (book of myLibrary){
         const row = document.createElement("tr");
+        row.classList.add("row")
         for (property in book){
             if (property === "title"){
                 const header = document.createElement("th");
