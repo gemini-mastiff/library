@@ -41,8 +41,13 @@ function updateTable(){
         delCell.appendChild(delBtn);
         row.appendChild(delCell);
         table.appendChild(row);
-    }
-   }
+    };
+};
+
+addBookToLibrary("Meditations", "Marcus Aurelius", 304, "unread");
+addBookToLibrary("Psycho-Cybernetics", "Dr Maxwell Maltz", 282, "reading");
+addBookToLibrary("The Princess Bride", "William Goldman", 512, "finished");
+updateTable()
 
 function Book(title, author, pages, read){
     this.title = title;
@@ -55,6 +60,15 @@ function addBookToLibrary(title, author, pages, read) {
     let newBook = new Book(title, author, pages, read);
     myLibrary.push(newBook);
 };
+
+const allDelBtns = document.querySelectorAll("[data-index]")
+allDelBtns.forEach((delBtn) => {
+    delBtn.addEventListener("click", () => {
+        console.log(delBtn.dataset.index)
+        myLibrary.splice(delBtn.dataset.index, 1);
+        updateTable();
+    });
+});
 
 newBtn.addEventListener("click", () => {
     dialog.show();
@@ -76,9 +90,4 @@ saveBtn.addEventListener("click", (event) => {
     form.reset();
     dialog.close()
 });
-
-addBookToLibrary("Meditations", "Marcus Aurelius", 304, "unread");
-addBookToLibrary("Psycho-Cybernetics", "Dr Maxwell Maltz", 282, "reading");
-addBookToLibrary("The Princess Bride", "William Goldman", 512, "finished");
-updateTable()
 
