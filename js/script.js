@@ -20,8 +20,10 @@ function updateTable(){
         row.remove();
     });
     for (book of myLibrary){
+        const index = myLibrary.indexOf(book);
         const row = document.createElement("tr");
         row.classList.add("row")
+        row.setAttribute("data-index", index);
         for (property in book){
             if (property === "title"){
                 const header = document.createElement("th");
