@@ -58,15 +58,9 @@ function updateTable(){
     };
     allReadBoxes = document.querySelectorAll(".readBox");
     allReadBoxes.forEach((readBox) => {
-        let index = readBox.dataset.index;
-        let book = myLibrary[index]
-        readBox.addEventListener("click", () => {
-            if (readBox.checked) {
-                book.read = true
-            } else {
-                book.read = false
-            }
-            console.log(`${book.title} : ${book.read}`)
+        let book = myLibrary[readBox.dataset.index]
+        readBox.addEventListener("change", () => {
+            book.read = readBox.checked ? true : false; 
         });
     });
     // When the table updates, allDelBtns must be updated with it
