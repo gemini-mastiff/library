@@ -37,8 +37,8 @@ function updateTable(){
             }
         }
         const delCell = document.createElement("td");
-        const del = document.createElement("button");
-        delCell.appendChild(del);
+        const delBtn = document.createElement("button");
+        delCell.appendChild(delBtn);
         row.appendChild(delCell);
         table.appendChild(row);
     }
