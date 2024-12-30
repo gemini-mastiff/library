@@ -50,12 +50,13 @@ h1{
 }
 
 table{
+    table-layout: fixed;
     background-color: var(--MAIN-COLOUR);
     border-collapse: collapse;
 }
 
 th, td{
     border: 1px solid black;
-    width: 25%;
+    text-align: left;
     padding: 8px;
 }
