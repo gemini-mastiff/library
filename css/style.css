@@ -95,7 +95,12 @@ form{
     gap: 0.8rem;
 }
 
+.form-row{
+    display: flex;
+    justify-content: space-between;
+}
+
 #closeBtn,
 #saveBtn{
-    
+    margin-right: 0;
 }
