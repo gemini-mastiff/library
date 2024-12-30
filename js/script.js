@@ -44,8 +44,10 @@ function generateTable() {
             }
         }
         const delCell = document.createElement("td");
-        const delBtn = document.createElement("button");
-        delBtn.classList.add("delBtn")
+        const delBtn = document.createElement("img");
+        delBtn.classList.add("delBtn");
+        delBtn.setAttribute("src", "svg/window-close.svg");
+        delBtn.setAttribute("alt", "Delete Button");
         delBtn.setAttribute("data-index", index);
         delCell.appendChild(delBtn);
         row.appendChild(delCell);
