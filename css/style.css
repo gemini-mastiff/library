@@ -31,12 +31,14 @@ time, mark, audio, video {
 
 body{
     height: 100vh;
+    width: 100%;
     background-color: var(--BG-COLOUR);
 }
 
 .wrapper{
     width: min(800px, 100%); 
     margin: auto;
+    margin-bottom: 2rem;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -89,6 +91,12 @@ thead th{
 }
 
 /* form */
+
+dialog{
+    border: none;
+    border-radius: 10px;
+    box-shadow: 2px 3px 5px 0px #BCBCBC;
+}
 
 form{
     display: flex;
