@@ -121,6 +121,9 @@ form{
 .form-row input[type=text],
 .form-row input[type=tel]{
     width: 30ch;
+    background-color: var(--BG-COLOUR);
+    border: none;
+    border-radius: 5px;
 }
 
 .form-row input[type=checkbox]{
