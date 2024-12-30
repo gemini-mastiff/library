@@ -98,9 +98,15 @@ form{
 .form-row{
     display: flex;
     justify-content: space-between;
+    gap: 1rem;
+}
+
+.form-row input[type=text],
+.form-row input[type=tel]{
+    width: 30ch;
 }
 
 #closeBtn,
 #saveBtn{
-    margin-right: 0;
+    margin-left: auto;
 }
