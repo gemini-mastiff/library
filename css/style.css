@@ -41,6 +41,12 @@ body{
     flex-direction: column;
 }
 
+.delBtn,
+#closeBtn{
+    height: 20px;
+    width: 20px;
+}
+
 h1{
     font-size: 2rem;
     font-weight: bold;
@@ -59,6 +65,12 @@ th, td{
     border: 1px solid black;
     text-align: left;
     padding: 8px;
+}
+
+tr th:nth-last-child(-n+2),
+tr td:nth-last-child(-n+2){
+    width: 5%;
+    text-align: center;
 }
 
 thead th{
