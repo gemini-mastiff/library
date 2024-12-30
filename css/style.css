@@ -96,6 +96,13 @@ thead th{
 #saveBtn{
     width: 80px;
     height: 1.5rem;
+    background-color: var(--BG-COLOUR);
+    border: none;
+    border-radius: 8px;
+}
+
+#showDialog{
+    background-color: var(--MAIN-COLOUR);
 }
 
 /* form */
