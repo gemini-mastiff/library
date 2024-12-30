@@ -19,6 +19,16 @@ time, mark, audio, video {
 	vertical-align: baseline;
 }
 
+:root{
+    --MAIN-COLOUR: #fafaf9;
+    --BG-COLOUR: #e5e7eb;
+    --ACCENT-1: #0ea5e9;
+    --ACCENT-2: #facc15;
+    font-family: 'Roboto Flex', sans-serif;
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
 body{
     height: 100vh;
 }
