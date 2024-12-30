@@ -56,6 +56,8 @@ h1{
     margin-bottom: 2rem;
 }
 
+/* table */
+
 table{
     table-layout: fixed;
     background-color: var(--MAIN-COLOUR);
@@ -77,3 +79,12 @@ tr td:nth-last-child(-n+2){
 thead th{
     font-weight: bold;
 }
+
+#showDialog{
+    margin-top: 1rem;
+    width: 80px;
+    height: 1.5rem;
+}
+
+/* form */
+
