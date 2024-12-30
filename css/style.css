@@ -65,18 +65,20 @@ table{
     table-layout: fixed;
     background-color: var(--MAIN-COLOUR);
     border-collapse: collapse;
+    border-radius: 10px;
+    box-shadow: 2px 3px 5px 0px #BCBCBC;
     margin-bottom: 1rem;
 }
 
 th, td{
-    border: 1px solid black;
+    /* border: 1px solid black; */
     text-align: left;
     padding: 8px;
 }
 
 tr th:nth-last-child(-n+2),
 tr td:nth-last-child(-n+2){
-    width: 5%;
+    width: 10%;
     text-align: center;
 }
 
