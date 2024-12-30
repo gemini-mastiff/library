@@ -106,6 +106,10 @@ form{
     width: 30ch;
 }
 
+.form-row input[type=checkbox]{
+    margin-right: auto;
+}
+
 #closeBtn,
 #saveBtn{
     margin-left: auto;
