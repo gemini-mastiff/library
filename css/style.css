@@ -50,6 +50,7 @@ h1{
 }
 
 table{
+    background-color: var(--MAIN-COLOUR);
     border-collapse: collapse;
 }
 
