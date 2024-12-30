@@ -61,13 +61,18 @@ h1{
 
 /* table */
 
+.table-wrapper{
+    background-color: var(--MAIN-COLOUR);
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 2px 3px 5px 0px #BCBCBC;
+    margin-bottom: 1rem;
+}
+
 table{
     table-layout: fixed;
     background-color: var(--MAIN-COLOUR);
     border-collapse: collapse;
-    border-radius: 10px;
-    box-shadow: 2px 3px 5px 0px #BCBCBC;
-    margin-bottom: 1rem;
 }
 
 th, td{
