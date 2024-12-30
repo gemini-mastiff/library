@@ -35,7 +35,7 @@ body{
 }
 
 .wrapper{
-    width: 80%;
+    width: min(800px, 100%); 
     margin: auto;
     display: flex;
     flex-direction: column;
