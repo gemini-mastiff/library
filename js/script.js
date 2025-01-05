@@ -1,7 +1,4 @@
 const table = document.querySelector("tbody");
-let allRows;
-let allDelBtns;
-let allReadBoxes;
 
 const newBtn = document.querySelector("#showDialog");
 const closeBtn = document.querySelector("#closeBtn");
@@ -20,6 +17,7 @@ function generateTable() {
         const index = myLibrary.indexOf(book);
         const row = document.createElement("tr");
         row.classList.add("row");
+        row.setAttribute("data-index", index);
         for (property in book){
             if (property === "title"){
                 const header = document.createElement("th");
@@ -32,7 +30,6 @@ function generateTable() {
                     const readBox = document.createElement("input");
                     readBox.setAttribute("type", "checkbox");
                     readBox.classList.add("readBox");
-                    readBox.setAttribute("data-index", index);
                     if (book.read === true) {
                         readBox.setAttribute("checked", true);
                     }
@@ -48,7 +45,6 @@ function generateTable() {
         delBtn.classList.add("delBtn");
         delBtn.setAttribute("src", "svg/window-close.svg");
         delBtn.setAttribute("alt", "Delete Button");
-        delBtn.setAttribute("data-index", index);
         delCell.appendChild(delBtn);
         row.appendChild(delCell);
         table.appendChild(row);
@@ -57,30 +53,29 @@ function generateTable() {
 
 function updateTable(){
     // Clears the existing table to avoid repeating when updateTable() is called
-    allRows = document.querySelectorAll(".row");
-    allRows.forEach((row) => {
+    const allPrevRows = document.querySelectorAll(".row");
+    allPrevRows.forEach((row) => {
         row.remove();
     });
     generateTable()
 
-    // When the table updates, allReadBoxes & allDelBtns must be updated with it
-    allReadBoxes = document.querySelectorAll(".readBox");
-    allDelBtns = document.querySelectorAll(".delBtn");
-
-    allReadBoxes.forEach((readBox) => {
-        const book = myLibrary[readBox.dataset.index]
+    // Everytime the table is updated, the rows must be updated too
+    const allBooks = document.querySelectorAll(".row");
+    allBooks.forEach((bookRow) => {
+        const index = bookRow.dataset.index;
+        const readBox = bookRow.querySelector(".readBox");
+        const delBtn = bookRow.querySelector(".delBtn");
+    
         readBox.addEventListener("change", () => {
-            let read = readBox.checked ? true : false;
-            book.toggleRead(read); 
+            const read = readBox.checked ? true : false;
+            myLibrary[index].toggleRead(read); 
         });
-    });
-
-    allDelBtns.forEach((delBtn) => {
+    
         delBtn.addEventListener("click", () => {
-            myLibrary.splice(delBtn.dataset.index, 1);
+            myLibrary.splice(index, 1);
             updateTable();
         });
-    }); 
+    });
 };
 
 class Book {
@@ -126,4 +121,3 @@ saveBtn.addEventListener("click", (event) => {
     form.reset();
     dialog.close();
 });
-
