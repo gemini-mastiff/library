@@ -68,9 +68,10 @@ function updateTable(){
     allDelBtns = document.querySelectorAll(".delBtn");
 
     allReadBoxes.forEach((readBox) => {
-        let book = myLibrary[readBox.dataset.index]
+        const book = myLibrary[readBox.dataset.index]
         readBox.addEventListener("change", () => {
-            book.read = readBox.checked ? true : false; 
+            let read = readBox.checked ? true : false;
+            book.toggleRead(read); 
         });
     });
 
@@ -82,11 +83,17 @@ function updateTable(){
     }); 
 };
 
-function Book(title, author, pages, read){
-    this.title = title;
-    this.author = author;
-    this.pages = pages;
-    this.read = read;
+class Book {
+    constructor (title, author, pages, read){
+        this.title = title;
+        this.author = author;
+        this.pages = pages;
+        this.read = read;
+    }
+
+    toggleRead(value){
+        this.read = value;
+    }
 };
 
 function addBookToLibrary(title, author, pages, read) {
