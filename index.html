@@ -1,64 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="js/script.js" defer></script>
-    <link rel="preconnect" href="https://fonts.bunny.net">
-    <link href="https://fonts.bunny.net/css?family=roboto-flex:400" rel="stylesheet"/>
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.bunny.net" />
+    <link
+      href="https://fonts.bunny.net/css?family=roboto-flex:400"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/style.css" />
     <title>Library</title>
-</head>
+  </head>
 
-<body>
-
-<div class="wrapper">
-    <h1>The Library of Destiny (or something)</h1>
-    <div class="table-wrapper">
+  <body>
+    <div class="wrapper">
+      <h1>The Library of Destiny (or something)</h1>
+      <div class="table-wrapper">
         <table>
-            <thead>
-                <tr>
-                    <th scope="col">Title</th>
-                    <th scope="col">Author</th>
-                    <th scope="col">Pages</th>
-                    <th scope="col">Read?</th>
-                    <th scope="col">Delete</th>
-                </tr>
-            </thead>
-            <tbody></tbody>
+          <thead>
+            <tr>
+              <th scope="col">Title</th>
+              <th scope="col">Author</th>
+              <th scope="col">Pages</th>
+              <th scope="col">Read?</th>
+              <th scope="col">Delete</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
         </table>
+      </div>
+      <button id="showDialog">New Book</button>
     </div>
-    <button id="showDialog">New Book</button>
-</div>
 
-<dialog>
-    <form>
-        <img id="closeBtn" src="svg/window-close.svg" alt="Close Button">
+    <dialog>
+      <form>
+        <img id="closeBtn" src="svg/window-close.svg" alt="Close Button" />
         <div class="form-row">
-            <label for="title">Title:</label>
-            <input  id="title"
-                    name="title"
-                    type="text">
+          <label for="title">Title:</label>
+          <input id="title" name="title" type="text" required />
         </div>
         <div class="form-row">
-            <label for="author">Author:</label>
-            <input  id="author"
-                    name="author"
-                    type="text">
+          <label for="author">Author:</label>
+          <input id="author" name="author" type="text" required />
         </div>
         <div class="form-row">
-            <label for="pages">Page Count:</label>
-            <input  id="pages"
-                    name="pages"
-                    type="tel">
+          <label for="pages">Page Count:</label>
+          <input
+            id="pages"
+            name="pages"
+            type="tel"
+            pattern="^[0-9]+$"
+            required
+          />
         </div>
         <div class="form-row">
-            <label for="name">Have you read the book?</label>
-            <input type="checkbox" id="read" name="read">
+          <label for="name">Have you read the book?</label>
+          <input type="checkbox" id="read" name="read" />
         </div>
-        <button id="saveBtn">Save</button>
-    </form>
-</dialog>
-    
-</body>
+        <button id="saveBtn" type="submit">Save</button>
+      </form>
+    </dialog>
+  </body>
 </html>
